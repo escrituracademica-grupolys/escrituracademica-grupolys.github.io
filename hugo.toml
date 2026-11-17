@@ -1,0 +1,95 @@
+# Configuración principal. Si cambias el nombre de la organización o del repositorio,
+# actualiza baseURL.
+baseURL = "https://escrituracademica-grupolys.github.io/"
+title = "Escritura académica · Grupo LyS"
+defaultContentLanguage = "es"
+defaultContentLanguageInSubdir = false
+enableRobotsTXT = true
+disableKinds = ["taxonomy", "term"]
+
+[markup.goldmark.renderer]
+  unsafe = true   # permite HTML dentro de los archivos Markdown (p. ej. <mark>)
+
+[params]
+  grupoUrl = "https://www.grupolys.org/"
+  proyectosGrupoUrl = "https://www.grupolys.org/proyectos.html"
+
+# ---------- Español (idioma por defecto) ----------
+[languages.es]
+  label = "Español"
+  locale = "es"
+  weight = 1
+  title = "Escritura académica · Grupo LyS"
+
+  [[languages.es.menus.main]]
+    name = "Líneas"
+    pageRef = "/lineas"
+    weight = 10
+  [[languages.es.menus.main]]
+    name = "Proyectos"
+    pageRef = "/proyectos"
+    weight = 20
+  [[languages.es.menus.main]]
+    name = "Financiación"
+    pageRef = "/financiacion"
+    weight = 30
+  [[languages.es.menus.main]]
+    name = "Equipo"
+    pageRef = "/equipo"
+    weight = 40
+  [[languages.es.menus.main]]
+    name = "Producción"
+    pageRef = "/produccion"
+    weight = 50
+  [[languages.es.menus.main]]
+    name = "Recursos"
+    pageRef = "/recursos"
+    weight = 60
+  [[languages.es.menus.main]]
+    name = "Eventos"
+    pageRef = "/eventos"
+    weight = 70
+  [[languages.es.menus.main]]
+    name = "Contacto"
+    pageRef = "/contacto"
+    weight = 80
+
+# ---------- English ----------
+[languages.en]
+  label = "English"
+  locale = "en"
+  weight = 2
+  title = "Academic writing · LyS Group"
+
+  [[languages.en.menus.main]]
+    name = "Research lines"
+    pageRef = "/lineas"
+    weight = 10
+  [[languages.en.menus.main]]
+    name = "Projects"
+    pageRef = "/proyectos"
+    weight = 20
+  [[languages.en.menus.main]]
+    name = "Funding"
+    pageRef = "/financiacion"
+    weight = 30
+  [[languages.en.menus.main]]
+    name = "Team"
+    pageRef = "/equipo"
+    weight = 40
+  [[languages.en.menus.main]]
+    name = "Output"
+    pageRef = "/produccion"
+    weight = 50
+  [[languages.en.menus.main]]
+    name = "Resources"
+    pageRef = "/recursos"
+    weight = 60
+  [[languages.en.menus.main]]
+    name = "Events"
+    pageRef = "/eventos"
+    weight = 70
+  [[languages.en.menus.main]]
+    name = "Contact"
+    pageRef = "/contacto"
+    weight = 80

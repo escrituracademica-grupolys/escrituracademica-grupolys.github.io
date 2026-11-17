@@ -1,0 +1,6 @@
+<li>
+  <h3>{{ .Title }}</h3>
+  <p class="role">{{ .Params.role }}{{ with .Params.affiliation }} · {{ . }}{{ end }}{{ with .Params.period }} ({{ . }}){{ end }}</p>
+  {{ with where .Params.links "url" "ne" "" }}<p class="plinks">{{ range $i, $l := . }}{{ if $i }} · {{ end }}<a href="{{ $l.url }}">{{ $l.name }}</a>{{ end }}</p>{{ end }}
+  {{ with .Content }}<div class="bio">{{ . }}</div>{{ end }}
+</li>

@@ -1,0 +1,13 @@
+# Financiaciones del grupo. Añade una entrada por proyecto y entidad financiadora.
+# Los logos van en la carpeta static/logos/ (mejor en SVG o PNG con fondo transparente).
+#
+# Ejemplo (bórralo o cámbialo por datos reales):
+#
+#  - start: 2017                       # año de inicio, para ordenar
+#    years: "2017–2023"                # texto que se muestra
+#    entity: "Nombre de la entidad"
+#    project: "HARTA"
+#    code: "Referencia del proyecto"
+#    logo: "logos/entidad.svg"         # opcional
+
+items: []

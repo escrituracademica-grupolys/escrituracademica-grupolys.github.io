@@ -1,0 +1,18 @@
+skip: {other: "Skip to content"}
+projects: {other: "Projects"}
+allProjects: {other: "See all projects"}
+groupLink: {other: "LyS Group (Universidade da Coruña)"}
+groupLinkLong: {other: "More about the group at"}
+heroSentence: {other: "<mark>In this paper</mark> we analyse the most frequent lexical combinations <mark>in the context of</mark> academic writing."}
+heroCaption: {other: "Lexical bundles, recurrent sequences like the ones marked above, are one of the group's lines of work."}
+years: {other: "Period"}
+funder: {other: "Funding"}
+code: {other: "Reference"}
+pis: {other: "Principal investigators"}
+links: {other: "Links"}
+empty: {other: "There is no content in this section yet."}
+period: {other: "Period"}
+former: {other: "Former members"}
+current: {other: "Current members"}
+language: {other: "Language"}
+footerFunding: {other: "The group's projects have been funded by the bodies listed in the funding section."}

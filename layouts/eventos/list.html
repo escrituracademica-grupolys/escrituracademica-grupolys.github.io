@@ -1,0 +1,19 @@
+{{ define "main" }}
+<article class="wrap">
+  <div class="prose"><h1>{{ .Title }}</h1>{{ .Content }}</div>
+  {{ with .Pages.ByDate.Reverse }}
+  <ol class="rows">
+    {{ range . }}
+    <li>
+      <span class="rows-label">{{ .Date.Format "2006-01-02" }}</span>
+      <div>
+        <h2>{{ if .Params.link }}<a href="{{ .Params.link }}">{{ .Title }}</a>{{ else }}{{ .Title }}{{ end }}</h2>
+        {{ with .Params.place }}<p class="role">{{ . }}</p>{{ end }}
+        {{ .Content }}
+      </div>
+    </li>
+    {{ end }}
+  </ol>
+  {{ else }}<p>{{ i18n "empty" }}</p>{{ end }}
+</article>
+{{ end }}

@@ -1,0 +1,32 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="wrap">
+    <p class="hero-sentence">{{ i18n "heroSentence" | safeHTML }}</p>
+    <p class="hero-caption">{{ i18n "heroCaption" }}</p>
+  </div>
+</section>
+
+<section class="wrap prose intro">
+  {{ .Content }}
+  <p>{{ i18n "groupLinkLong" }} <a href="{{ site.Params.grupoUrl }}">{{ i18n "groupLink" }}</a>.</p>
+</section>
+
+{{ $proyectos := site.GetPage "/proyectos" }}
+{{ with $proyectos }}
+<section class="wrap">
+  <h2 class="sub">{{ i18n "projects" }}</h2>
+  <ol class="rows">
+    {{ range .Pages.ByWeight }}
+    <li>
+      <span class="rows-label">{{ .Params.years }}</span>
+      <div>
+        <h3><a href="{{ .RelPermalink }}">{{ with .Params.acronym }}{{ . }}: {{ end }}{{ .Title }}</a></h3>
+        {{ with .Params.summary }}<p>{{ . }}</p>{{ end }}
+      </div>
+    </li>
+    {{ end }}
+  </ol>
+  <p><a href="{{ .RelPermalink }}">{{ i18n "allProjects" }}</a></p>
+</section>
+{{ end }}
+{{ end }}

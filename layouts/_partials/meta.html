@@ -1,0 +1,10 @@
+{{ $has := or .Params.years .Params.funder .Params.code .Params.pis .Params.links }}
+{{ if $has }}
+<dl class="meta">
+  {{ with .Params.years }}<div><dt>{{ i18n "years" }}</dt><dd>{{ . }}</dd></div>{{ end }}
+  {{ with .Params.funder }}<div><dt>{{ i18n "funder" }}</dt><dd>{{ . }}</dd></div>{{ end }}
+  {{ with .Params.code }}<div><dt>{{ i18n "code" }}</dt><dd>{{ . }}</dd></div>{{ end }}
+  {{ with .Params.pis }}<div><dt>{{ i18n "pis" }}</dt><dd>{{ delimit . ", " }}</dd></div>{{ end }}
+  {{ with .Params.links }}<div><dt>{{ i18n "links" }}</dt><dd>{{ range $i, $l := . }}{{ if $i }} · {{ end }}<a href="{{ $l.url }}">{{ $l.name }}</a>{{ end }}</dd></div>{{ end }}
+</dl>
+{{ end }}

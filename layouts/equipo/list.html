@@ -1,0 +1,21 @@
+{{ define "main" }}
+<article class="wrap">
+  <div class="prose"><h1>{{ .Title }}</h1>{{ .Content }}</div>
+  {{ $current := where .Pages "Params.current" "!=" false }}
+  {{ $former := where .Pages "Params.current" false }}
+  {{ if or $current $former }}
+    {{ with $current }}
+    <h2 class="sub">{{ i18n "current" }}</h2>
+    <ul class="people">
+      {{ range .ByWeight }}{{ partial "person.html" . }}{{ end }}
+    </ul>
+    {{ end }}
+    {{ with $former }}
+    <h2 class="sub">{{ i18n "former" }}</h2>
+    <ul class="people">
+      {{ range .ByWeight }}{{ partial "person.html" . }}{{ end }}
+    </ul>
+    {{ end }}
+  {{ else }}<p>{{ i18n "empty" }}</p>{{ end }}
+</article>
+{{ end }}

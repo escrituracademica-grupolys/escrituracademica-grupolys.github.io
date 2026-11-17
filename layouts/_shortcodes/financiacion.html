@@ -1,0 +1,15 @@
+{{ $items := hugo.Data.financiacion.items }}
+{{ if $items }}
+<ol class="rows funding">
+  {{ range sort $items "start" "desc" }}
+  <li>
+    <span class="rows-label">{{ .years }}</span>
+    <div>
+      {{ if .logo }}<img class="logo" src="{{ .logo | relURL }}" alt="{{ .entity }}" loading="lazy">{{ end }}
+      <h3>{{ .entity }}</h3>
+      <p>{{ with .project }}<strong>{{ . }}</strong>{{ end }}{{ with .code }} · {{ . }}{{ end }}</p>
+    </div>
+  </li>
+  {{ end }}
+</ol>
+{{ else }}<p>{{ i18n "empty" }}</p>{{ end }}
